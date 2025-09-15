@@ -37,6 +37,7 @@ persistence_fc['time'] = persistence_fc.time + np.timedelta64(i+1, 'D')
 ```
 
 #### Climatology Models
+
 - **Daily Climatology**: Uses the historical average for each day of the year
 - **Weekly Climatology**: Uses the historical average for each week of the year
 
@@ -64,6 +65,7 @@ lr.fit(X_train, y_train)
 This notebook implements two deep learning approaches:
 
 #### Convolutional Neural Network (CNN)
+
 A CNN model with multiple convolution, pooling, and upsampling layers:
 
 ```python
@@ -76,6 +78,7 @@ model = keras.Sequential([
 ```
 
 #### ConvLSTM (Convolutional LSTM)
+
 A ConvLSTM model that combines convolution operations with LSTM recurrence:
 
 ```python
@@ -93,6 +96,7 @@ model = keras.Sequential([
 All models are evaluated using three key metrics:
 
 ### Root Mean Square Error (RMSE)
+
 Measures the average magnitude of error between predicted and actual values:
 
 ```python
@@ -103,6 +107,7 @@ def compute_rmse(prediction, actual, mean_dims=('time', 'latitude', 'longitude')
 ```
 
 ### Mean Absolute Error (MAE)
+
 Measures the average absolute difference between predicted and actual values:
 
 ```python
@@ -113,6 +118,7 @@ def compute_mae(prediction, actual, mean_dims=('time', 'latitude', 'longitude'))
 ```
 
 ### Anomaly Correlation Coefficient (ACC)
+
 Measures the correlation between predicted and actual anomalies relative to climatology:
 
 ```python
@@ -175,13 +181,13 @@ Two scripts are provided to convert the NetCDF dataset to CSV format for easier 
 ## References
 
 Original BharatBench dataset citation:
-Choudhury, A., Panda, J., & Mukherjee, A. (2024). BharatBench: Dataset for data-driven weather forecasting over India. arXiv [Physics.Ao-Ph]. (http://arxiv.org/abs/2405.07534)
+Choudhury, A., Panda, J., & Mukherjee, A. (2024). BharatBench: Dataset for data-driven weather forecasting over India. arXiv [Physics.Ao-Ph]. (<http://arxiv.org/abs/2405.07534>)
 
 ## Usage
 
 To use this repository:
 
-1. Download the BharatBench dataset from Kaggle (https://www.kaggle.com/datasets/maslab/bharatbench)
+1. Download the BharatBench dataset from Kaggle (<https://www.kaggle.com/datasets/maslab/bharatbench>)
 2. Place the IMDAA_merged_1.08_1990_2020.nc file in the repository root
 3. Run the notebooks in sequence to replicate the results
 4. Use the conversion scripts if CSV format is required
